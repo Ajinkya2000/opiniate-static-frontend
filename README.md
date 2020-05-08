@@ -1,0 +1,1 @@
+# opiniate-static-frontend
