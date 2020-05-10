@@ -85,7 +85,7 @@
   }
 }
 
-/* DASHBOARD STYLES */
+/* DASHBOARD-EMPTY STYLES */
 
 .dashboard-wrapper {
   overflow: hidden;
@@ -218,6 +218,7 @@
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+  -moz-appearance: none;
   margin: 0;
 }
 
@@ -278,4 +279,108 @@ input[type="number"]::-webkit-outer-spin-button {
   img {
     margin-right: 30px;
   }
+}
+
+//DASHBOARD-ADD-POLL STYLES
+
+.dashboard-add-main-content {
+  background: url("../images/dashboard-add-main-content.png") no-repeat;
+  background-size: contain;
+  background-position: 10vw 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  height: 90vh;
+
+  div.add-wrapper {
+    height: 80%;
+    width: 80%;
+
+    h2.is-size-1 {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    form div.poll {
+      position: absolute;
+      top: 25%;
+      left: 20%;
+      display: grid;
+      // grid-template-rows: repeat(3, max-content);
+      grid-template-columns: max-content 200px;
+      grid-gap: 25px;
+      // background-color: orangered;
+      grid-auto-rows: max-content;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        padding: 0.5rem;
+        border: 1px solid grey;
+      }
+    }
+  }
+}
+
+.options-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid grey;
+  input {
+    border: none !important;
+    outline: none;
+  }
+  button {
+    border: none;
+    background-color: white;
+    flex: 1;
+    color: #ff7171;
+    font-size: 1.25rem;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.options {
+  grid-column: 2 / 3;
+
+  .option-values {
+    display: flex;
+    margin-bottom: 20px;
+
+    button {
+      color: #ff7171;
+      cursor: pointer;
+      font-size: 1.25rem;
+      border: none;
+      background-color: #fff;
+    }
+
+    .trash-btn {
+      background-color: transparent;
+    }
+
+    .option-input {
+      display: flex;
+      height: 70%;
+      border: 1px solid grey;
+      input {
+        padding: 0.5rem;
+        border: none !important;
+      }
+    }
+  }
+}
+
+.dashboard-add-buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
 }

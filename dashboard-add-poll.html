@@ -19,7 +19,13 @@
       defer
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
-    <link rel="stylesheet" href="./styles/animation.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/animation.css" />
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
@@ -36,7 +42,7 @@
         </div>
       </nav>
       <div class="hamburger dashboard is-hidden-desktop">
-          <img src="./images/arrow-hamburger.png" alt="arrow-hamburger">
+        <img src="./images/arrow-hamburger.png" alt="arrow-hamburger" />
       </div>
 
       <header class="header columns is-desktop">
@@ -67,44 +73,70 @@
             </div>
           </div>
         </div>
-        <div class="button-mobile">
-          <button
-            class="button has-text-weight-semibold is-medium is-hidden-tablet is-danger is-rounded"
-          >
-            Create !
-          </button>
-        </div>
-        <div
-          class="header--main-content-mobile is-hidden-tablet is-full column"
-        ></div>
-        <div
-          class="header--main-content is-8-desktop is-hidden-mobile is-full column"
-        >
-          <div class="new-poll-wrapper">
-            <h2 class="is-capitalized is-size-3 has-text-weight-bold">
-              it's so lonely in here
-            </h2>
-            <p class="is-size-4">Make a new Poll</p>
-            <button
-              class="button has-text-weight-semibold is-medium is-danger is-rounded"
-            >
-              Create !
+        <div class="dashboard-add-main-content is-9-desktop is-full column">
+          <div class="add-wrapper">
+            <h2 class="is-size-1 has-text-weight-bold">Let's Go</h2>
+            <form action="">
+              <div class="poll">
+                <label for="" class="is-size-3 has-text-weight-semibold"
+                  >What's it About :
+                </label>
+                <input type="text" />
+                <h2 class="is-size-3 has-text-weight-semibold">Options :</h2>
+                <div class="options-wrapper">
+                  <input type="text" />
+                  <button><i class="fas fa-plus-circle"></i></button>
+                </div>
+
+                <div class="options">
+
+                  <div class="option-values">
+                    <div class="option-input">
+                      <button>
+                        <i class="fas fa-check"></i>
+                      </button>
+                      <input type="text" />
+                    </div>
+                    <button class="trash-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+
+                  <div class="option-values">
+                    <div class="option-input">
+                      <button>
+                        <i class="fas fa-check"></i>
+                      </button>
+                      <input type="text" />
+                    </div>
+                    <button class="trash-btn">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+              </div>
+            </form>
+
+          </div>
+          <div class="dashboard-add-buttons">
+            <button class="button is-default is-rounded">
+              <i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Cancel</button>
+            <button class="button is-default is-rounded is-danger has-text-weight-semibold">
+              Confirm
             </button>
           </div>
         </div>
       </header>
     </div>
     <script>
-
       /* HAMBURGER */
-      const hamburger = document.querySelector('.hamburger.dashboard img');
-      hamburger.addEventListener('click', () => {
-        const sidemenu = document.querySelector('.header--side-menu');
-        const userDetail = document.querySelector('.user');
-        const contacts = document.querySelector('.contacts div');
+      const hamburger = document.querySelector(".hamburger.dashboard img");
+      hamburger.addEventListener("click", () => {
+        const sidemenu = document.querySelector(".header--side-menu");
+        const userDetail = document.querySelector(".user");
+        const contacts = document.querySelector(".contacts div");
 
-        sidemenu.classList.toggle('sidemenu-hamburger');
-        userDetail.classList.toggle('user-hamburger');
+        sidemenu.classList.toggle("sidemenu-hamburger");
+        userDetail.classList.toggle("user-hamburger");
       });
 
       /* CONTACTS ADD */
