@@ -13,9 +13,7 @@
 
 .navbar-item img.google-login {
   max-height: 2.5rem;
-  margin-left: 2rem;
   margin-right: 3rem;
-  margin-left: auto;
 }
 
 .navbar.is-light .navbar-brand > a.navbar-item:hover,
@@ -490,5 +488,61 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.navbar-create-btn {
+  max-height: 2.5rem;
+  margin-right: 3rem;
+  margin-top: 0.75rem;
+  background-color: #ff7171 !important;
+  color: #fff !important;
+}
+
+.header--side-menu.dashboard-with-data {
+  background-color: #fff;
+}
+
+.dashboard-with-data-content {
+  background: url("../images/dashboard-with-data-bg.png") no-repeat center;
+  background-size: 65%;
+  background-color: #f6f6f6;
+}
+
+.dashboard-with-data-content .polls-with-data {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+  width: 45%;
+}
+
+.dashboard-with-data-content .dashboard-data-poll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+  border: 2px solid grey;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.dashboard-with-data-content .dashboard-data-poll button {
+  background-color: #fff0ae;
+  border: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.dashboard-with-data-content .dashboard-data-poll button:hover {
+  background-color: #ffe25f;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 /*# sourceMappingURL=style.css.map */

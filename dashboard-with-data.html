@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Opinate &mdash; Host genuine & private polls online for free !
+    </title>
+    <link
+      rel="shortcut icon"
+      href="./images/seo-and-web.svg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <link rel="stylesheet" href="./styles/animation.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <nav
+        class="navbar is-light"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src="./images/Mono-left.svg" width="112" height="28" />
+          </a>
+          <button class="navbar-item navbar-create-btn button is-default is-rounded is-danger">
+              Create !
+          </button>
+        </div>
+      </nav>
+      <div class="hamburger dashboard is-hidden-desktop">
+        <img src="./images/arrow-hamburger.png" alt="arrow-hamburger" />
+      </div>
+      <header class="header columns is-desktop">
+        <div class="header--side-menu dashboard-with-data is-3 column">
+          <div class="contact-details">
+            <div class="personal-details">
+              <div class="user">
+                <img
+                  src="./images/dashboard-sample-image.jpg"
+                  alt="sample-image"
+                />
+                <div class="info-wrapper">
+                  <h2 class="is-size-5 has-text-weight-bold">Ashutosh Panda</h2>
+                  <a href="#">Logout</a>
+                </div>
+              </div>
+              <p class="has-text-weight-semibold is-size-5">Your People</p>
+              <div class="add-contact">
+                <img src="./images/dashboard-add-btn.svg" alt="add-btn" />
+                <div class="input-details">
+                  <input class="name" type="text" placeholder="Name" />
+                  <input class="num" type="email" placeholder="Email" />
+                </div>
+              </div>
+            </div>
+            <div class="contacts">
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-with-data-content is-9-desktop is-full column">
+            <div class="polls-with-data">
+                <div class="dashboard-data-poll">
+                    <div class="">
+                        <h2 class="is-size-4 has-text-weight-semibold">What is your Favourite Colour ?</h2>
+                        <p class="date is-size-7">27 June 2019</p>
+                    </div>
+                    <button class="button view-poll is-rounded">View</button>
+                </div>
+                <div class="dashboard-data-poll">
+                    <div class="">
+                        <h2 class="is-size-4 has-text-weight-semibold">What is your Favourite Colour ?</h2>
+                        <p class="date is-size-7">27 June 2019</p>
+                    </div>
+                    <button class="button view-poll is-rounded">View</button>
+                </div>
+                <div class="dashboard-data-poll">
+                    <div class="">
+                        <h2 class="is-size-4 has-text-weight-semibold">What is your Favourite Colour ?</h2>
+                        <p class="date is-size-7">27 June 2019</p>
+                    </div>
+                    <button class="button view-poll is-rounded">View</button>
+                </div>
+            </div>
+        </div>
+      </header>
+    </div>
+    <script src="">
+      /* HAMBURGER */
+      const hamburger = document.querySelector(".hamburger.dashboard img");
+      hamburger.addEventListener("click", () => {
+        const sidemenu = document.querySelector(".header--side-menu");
+        const userDetail = document.querySelector(".user");
+        const contacts = document.querySelector(".contacts div");
+
+        sidemenu.classList.toggle("sidemenu-hamburger");
+        userDetail.classList.toggle("user-hamburger");
+      });
+    </script>
+  </body>
+</html>
