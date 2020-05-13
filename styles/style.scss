@@ -1,3 +1,6 @@
+//VARIABLES
+$color-primary: #ff7171;
+
 /* MAIN LANDING PAGE */
 
 .navbar-item img {
@@ -113,13 +116,21 @@
         padding-bottom: 25px;
         div.user {
           display: flex;
-          justify-content: space-evenly;
+          justify-content: center;
           align-items: center;
           margin-top: 20px;
+
+          h2.is-size-5 {
+            @media screen and (min-width: 1024px) and (max-width: 1111px) {
+              font-size: 1rem !important;
+            }
+          }
+
           img {
             width: 60px;
             border-radius: 50%;
             object-fit: cover;
+            margin-right: 15px;
           }
         }
 
@@ -131,15 +142,17 @@
         .add-contact {
           display: flex;
           justify-content: center;
+          align-items: center;
           img {
-            margin-right: 20px;
+            margin-right: 7.5%;
             cursor: pointer;
           }
           .input-details {
             input {
               display: block;
               margin-bottom: 10px;
-              padding: 10px 10px;
+              width: 95%;
+              padding: 5% 5%;
             }
           }
         }
@@ -184,7 +197,7 @@
       }
 
       button {
-        background-color: #ff7171;
+        background-color: $color-primary;
         margin-top: 5%;
         transform: translateX(-20%);
       }
@@ -244,14 +257,14 @@ input[type="number"]::-webkit-outer-spin-button {
 .hamburger.dashboard {
   background-color: transparent;
   width: 100px;
-  height: 100vh;
+  height: 90vh;
   position: absolute;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 768px) {
-    transform: translateY(-10%);
+    // transform: translateY(-10%);
     width: 50px;
   }
   img {
@@ -333,7 +346,7 @@ input[type="number"]::-webkit-outer-spin-button {
     border: none;
     background-color: white;
     flex: 1;
-    color: #ff7171;
+    color: $color-primary;
     font-size: 1.25rem;
     cursor: pointer;
     outline: none;
@@ -348,7 +361,7 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-bottom: 20px;
 
     button {
-      color: #ff7171;
+      color: $color-primary;
       cursor: pointer;
       font-size: 1.25rem;
       border: none;
@@ -381,14 +394,18 @@ input[type="number"]::-webkit-outer-spin-button {
   justify-content: space-between;
 }
 
-// DASHBOARD-ADD-POLL STYLES
+// DASHBOARD-WITH-DATA STYLES
+
+.dashboard-with-data-body {
+  overflow: hidden;
+}
 
 .navbar-create-btn {
   max-height: 2.5rem;
   margin-right: 3rem;
   margin-top: 0.75rem;
 
-  background-color: #ff7171 !important;
+  background-color: $color-primary !important;
   color: #fff !important;
 }
 
@@ -400,12 +417,23 @@ input[type="number"]::-webkit-outer-spin-button {
   background: url("../images/dashboard-with-data-bg.png") no-repeat center;
   background-size: 65%;
   background-color: #f6f6f6;
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+    top: 10vh;
+    height: 90vh;
+  }
   .polls-with-data {
     position: absolute;
     top: 50%;
     left: 40%;
     transform: translateY(-40%);
     width: 45%;
+
+    @media screen and (max-width: 1024px) {
+      top: 45%;
+      left: 20%;
+      width: 60%;
+    }
   }
   .dashboard-data-poll {
     display: flex;
@@ -425,6 +453,101 @@ input[type="number"]::-webkit-outer-spin-button {
     button:hover {
       background-color: #ffe25f;
       transition: all 0.3s ease;
+    }
+  }
+}
+
+// VOTE-STRANGER-LOGGED-IN
+
+.vote-stranger-logged-in {
+  height: 88vh;
+  background: url("../images/vote-stranger-logged-in-bg.png") no-repeat center;
+  background-position-x: 35%;
+  background-size: 65%;
+
+  @media screen and (max-width: 1024px) {
+    background-size: contain;
+  }
+
+  h2.vote-opinion {
+    text-align: center;
+    color: $color-primary;
+    margin: 3% auto 7%;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 5%;
+      margin-bottom: 15%;
+    }
+  }
+
+  .vote-question {
+    text-align: center;
+    h2 {
+      @media screen and (max-width: 768px){
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .option-values {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5%;
+      width: 100%;
+      height: 150px;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+      pointer-events: none;
+
+      & + label {
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto 3fr;
+        grid-column-gap: 50px;
+        @media screen and (max-width: 700px){
+          grid-column-gap: 0;
+        }
+
+        svg {
+          width: 2em;
+          stroke: $color-primary;
+          stroke-width: 7;
+          fill: white;
+
+          .box {
+            stroke-dasharray: 320;
+            stroke-dashoffset: 0;
+            fill: white;
+            transition: stroke-dashoffset 0.3s linear;
+          }
+          .check {
+            stroke-dasharray: 70;
+            stroke-dashoffset: 70;
+            fill: none;
+            transition: stroke-dashoffset 0.3s linear;
+          }
+        }
+
+        span {
+          padding: 0.3em;
+          margin: 0.3em;
+          font-size: 1.5rem ;
+        }
+      }
+
+      &:checked + label {
+        .box {
+          stroke-dashoffset: 320;
+        }
+        .check {
+          stroke-dashoffset: 0;
+        }
+      }
     }
   }
 }

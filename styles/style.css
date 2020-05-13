@@ -130,13 +130,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1111px) {
+  .header--side-menu .contact-details .personal-details div.user h2.is-size-5 {
+    font-size: 1rem !important;
+  }
 }
 
 .header--side-menu .contact-details .personal-details div.user img {
@@ -144,6 +150,7 @@
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-right: 15px;
 }
 
 .header--side-menu .contact-details .personal-details p {
@@ -158,17 +165,21 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header--side-menu .contact-details .personal-details .add-contact img {
-  margin-right: 20px;
+  margin-right: 7.5%;
   cursor: pointer;
 }
 
 .header--side-menu .contact-details .personal-details .add-contact .input-details input {
   display: block;
   margin-bottom: 10px;
-  padding: 10px 10px;
+  width: 95%;
+  padding: 5% 5%;
 }
 
 .header--main-content {
@@ -302,7 +313,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .hamburger.dashboard {
   background-color: transparent;
   width: 100px;
-  height: 100vh;
+  height: 90vh;
   position: absolute;
   z-index: 2;
   display: -webkit-box;
@@ -318,8 +329,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media screen and (max-width: 768px) {
   .hamburger.dashboard {
-    -webkit-transform: translateY(-10%);
-            transform: translateY(-10%);
     width: 50px;
   }
 }
@@ -490,6 +499,10 @@ input[type="number"]::-webkit-outer-spin-button {
           justify-content: space-between;
 }
 
+.dashboard-with-data-body {
+  overflow: hidden;
+}
+
 .navbar-create-btn {
   max-height: 2.5rem;
   margin-right: 3rem;
@@ -508,6 +521,14 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #f6f6f6;
 }
 
+@media screen and (max-width: 1024px) {
+  .dashboard-with-data-content {
+    position: absolute;
+    top: 10vh;
+    height: 90vh;
+  }
+}
+
 .dashboard-with-data-content .polls-with-data {
   position: absolute;
   top: 50%;
@@ -515,6 +536,14 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-transform: translateY(-40%);
           transform: translateY(-40%);
   width: 45%;
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard-with-data-content .polls-with-data {
+    top: 45%;
+    left: 20%;
+    width: 60%;
+  }
 }
 
 .dashboard-with-data-content .dashboard-data-poll {
@@ -544,5 +573,117 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #ffe25f;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.vote-stranger-logged-in {
+  height: 88vh;
+  background: url("../images/vote-stranger-logged-in-bg.png") no-repeat center;
+  background-position-x: 35%;
+  background-size: 65%;
+}
+
+@media screen and (max-width: 1024px) {
+  .vote-stranger-logged-in {
+    background-size: contain;
+  }
+}
+
+.vote-stranger-logged-in h2.vote-opinion {
+  text-align: center;
+  color: #ff7171;
+  margin: 3% auto 7%;
+}
+
+@media screen and (max-width: 768px) {
+  .vote-stranger-logged-in h2.vote-opinion {
+    margin-top: 5%;
+    margin-bottom: 15%;
+  }
+}
+
+.vote-stranger-logged-in .vote-question {
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .vote-stranger-logged-in .vote-question h2 {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.vote-stranger-logged-in .vote-question .option-values {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5%;
+  width: 100%;
+  height: 150px;
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"] {
+  display: none;
+  pointer-events: none;
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"] + label {
+  cursor: pointer;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: auto 3fr;
+      grid-template-columns: auto 3fr;
+  grid-column-gap: 50px;
+}
+
+@media screen and (max-width: 700px) {
+  .vote-stranger-logged-in .vote-question input[type="checkbox"] + label {
+    grid-column-gap: 0;
+  }
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"] + label svg {
+  width: 2em;
+  stroke: #ff7171;
+  stroke-width: 7;
+  fill: white;
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"] + label svg .box {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 0;
+  fill: white;
+  -webkit-transition: stroke-dashoffset 0.3s linear;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"] + label svg .check {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  fill: none;
+  -webkit-transition: stroke-dashoffset 0.3s linear;
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"] + label span {
+  padding: 0.3em;
+  margin: 0.3em;
+  font-size: 1.5rem;
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"]:checked + label .box {
+  stroke-dashoffset: 320;
+}
+
+.vote-stranger-logged-in .vote-question input[type="checkbox"]:checked + label .check {
+  stroke-dashoffset: 0;
 }
 /*# sourceMappingURL=style.css.map */
